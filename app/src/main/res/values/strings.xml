@@ -1,3 +1,66 @@
 <resources>
-    <string name="app_name">DSM PROYECTO DE CATEDRA</string>
+    <string name="app_name">AURA BANK</string>
+
+    <!-- Login -->
+    <string name="brand_title">AURA BANK</string>
+    <string name="title_login">Iniciar sesión</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="action_login">Iniciar sesión</string>
+    <string name="action_go_register">¿No tienes cuenta? Regístrate</string>
+    <string name="action_forgot_password">Olvidé mi contraseña</string>
+    <string name="msg_reset_sent">Te enviamos un correo para restablecer tu contraseña.</string>
+
+    <!-- Register -->
+    <string name="title_register">Crear cuenta</string>
+    <string name="hint_full_name">Nombre completo</string>
+    <string name="hint_student_id">Carnet</string>
+    <string name="hint_career">Carrera</string>
+    <string name="hint_currency">Moneda local</string>
+    <string name="hint_confirm_password">Confirmar contraseña</string>
+    <string name="action_register">Crear cuenta</string>
+    <string name="action_go_login">¿Ya tienes cuenta? Inicia sesión</string>
+
+    <!-- Profile -->
+    <string name="title_profile">Mi perfil</string>
+    <string name="action_save_profile">Guardar cambios</string>
+    <string name="title_change_password">Cambiar contraseña</string>
+    <string name="hint_current_password">Contraseña actual</string>
+    <string name="hint_new_password">Nueva contraseña</string>
+    <string name="action_change_password">Actualizar contraseña</string>
+    <string name="action_logout">Cerrar sesión</string>
+    <string name="msg_profile_saved">Perfil actualizado correctamente.</string>
+    <string name="msg_password_changed">Contraseña actualizada correctamente.</string>
+
+    <!-- Delete account -->
+    <string name="title_delete_account">Eliminar cuenta</string>
+    <string name="msg_delete_account_warning">Esta acción es permanente y eliminará tu cuenta junto con todos tus datos.</string>
+    <string name="hint_delete_password">Contraseña</string>
+    <string name="hint_delete_confirm_word">Escribe CONFIRMAR para continuar</string>
+    <string name="confirm_word">CONFIRMAR</string>
+    <string name="action_delete_account">Eliminar cuenta</string>
+    <string name="error_confirm_word_mismatch">Debes escribir exactamente \"CONFIRMAR\".</string>
+
+    <!-- Main -->
+    <string name="action_view_profile">Ver perfil</string>
+
+    <!-- Bottom navigation -->
+    <string name="title_dashboard">Inicio</string>
+    <string name="title_transactions">Ingresos y Gastos</string>
+    <string name="title_budget">Presupuestos</string>
+    <string name="title_history">Historial</string>
+    <string name="title_news">Noticias</string>
+
+    <!-- Placeholders de pantallas pendientes -->
+    <string name="placeholder_dashboard">Próximamente: resumen financiero del estudiante.</string>
+    <string name="placeholder_transactions">Próximamente: registro de ingresos y gastos.</string>
+    <string name="placeholder_budget">Próximamente: presupuestos y alertas.</string>
+    <string name="placeholder_history">Próximamente: historial financiero.</string>
+    <string name="placeholder_news">Próximamente: noticias académicas.</string>
+
+    <!-- Errors -->
+    <string name="error_invalid_email">Ingresa un correo válido.</string>
+    <string name="error_required_field">Este campo es obligatorio.</string>
+    <string name="error_password_too_short">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="error_passwords_do_not_match">Las contraseñas no coinciden.</string>
 </resources>

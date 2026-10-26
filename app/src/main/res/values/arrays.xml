@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="currency_codes">
+        <item>USD</item>
+        <item>GTQ</item>
+        <item>HNL</item>
+        <item>NIO</item>
+        <item>CRC</item>
+    </string-array>
+</resources>

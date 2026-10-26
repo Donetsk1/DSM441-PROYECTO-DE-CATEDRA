@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1084720365992",
+    "firebase_url": "https://proyectocatedra-c8a00-default-rtdb.firebaseio.com",
+    "project_id": "proyectocatedra-c8a00",
+    "storage_bucket": "proyectocatedra-c8a00.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084720365992:android:312ac18e918ff15ae3dd9d",
+        "android_client_info": {
+          "package_name": "com.example.dsmproyectodecatedra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1SoPlHBWVdVfGzHeu1fS89ZYGw7ScGo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

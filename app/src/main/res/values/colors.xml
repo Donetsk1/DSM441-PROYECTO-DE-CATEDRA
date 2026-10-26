@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta AURA BANK (extraída del degradado del logo) -->
+    <color name="aura_blue">#1C8ADE</color>
+    <color name="aura_blue_dark">#0D4C8A</color>
+    <color name="aura_teal">#17A999</color>
+    <color name="aura_green">#2E9E3D</color>
+    <color name="aura_green_dark">#1B5E20</color>
+    <color name="aura_yellow">#D6DE2E</color>
+    <color name="aura_yellow_dark">#8C9400</color>
+    <color name="aura_surface">#F4FBF8</color>
 </resources>
