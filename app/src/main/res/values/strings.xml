@@ -52,11 +52,9 @@
     <string name="title_news">Noticias</string>
 
     <!-- Placeholders de pantallas pendientes -->
-    <string name="placeholder_dashboard">Próximamente: resumen financiero del estudiante.</string>
     <string name="placeholder_transactions">Próximamente: registro de ingresos y gastos.</string>
     <string name="placeholder_budget">Próximamente: presupuestos y alertas.</string>
     <string name="placeholder_history">Próximamente: historial financiero.</string>
-    <string name="placeholder_news">Próximamente: noticias académicas.</string>
 
     <!-- Errors -->
     <string name="error_invalid_email">Ingresa un correo válido.</string>
