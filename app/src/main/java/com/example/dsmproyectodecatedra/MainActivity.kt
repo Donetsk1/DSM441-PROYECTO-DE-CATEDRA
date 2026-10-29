@@ -21,6 +21,7 @@ import com.google.android.material.button.MaterialButton
 class MainActivity : AppCompatActivity() {
 
     private val repository = UserRepository()
+    private var requestedMovementId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +62,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnItemSelectedListener { item ->
             val fragment = when (item.itemId) {
                 R.id.navDashboard -> DashboardFragment()
-                R.id.navTransactions -> TransactionsFragment()
+                R.id.navTransactions -> TransactionsFragment().apply {
+                    arguments = Bundle().apply { putString("editMovementId", requestedMovementId) }
+                    requestedMovementId = null
+                }
                 R.id.navBudget -> BudgetFragment()
                 R.id.navHistory -> HistoryFragment()
                 R.id.navNews -> NewsFragment()
@@ -80,5 +84,14 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.navHostContainer, fragment)
             .commit()
+    }
+
+    fun openMovementEditor(id: String) {
+        val navigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        requestedMovementId = id
+        if (navigation.selectedItemId == R.id.navTransactions) {
+            showFragment(TransactionsFragment().apply { arguments = Bundle().apply { putString("editMovementId", id) } })
+            requestedMovementId = null
+        } else navigation.selectedItemId = R.id.navTransactions
     }
 }

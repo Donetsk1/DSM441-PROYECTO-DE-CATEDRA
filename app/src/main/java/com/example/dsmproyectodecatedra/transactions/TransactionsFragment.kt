@@ -43,12 +43,23 @@ class TransactionsFragment : Fragment(R.layout.fragment_transactions) {
     private var saveButton: MaterialButton? = null
     private var currencyText: TextView? = null
     private var latestButton: MaterialButton? = null
+    private var pendingEditId: String? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         renderKey = ""
+        pendingEditId = arguments?.getString("editMovementId")
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 model.state.collect { state ->
+                    if (pendingEditId != null && !state.loading) {
+                        val movement = state.data.movements.firstOrNull { it.id == pendingEditId }
+                        pendingEditId = null
+                        arguments?.remove("editMovementId")
+                        if (movement != null) {
+                            model.editMovement(movement)
+                            return@collect
+                        }
+                    }
                     val key = "${state.detailId}:${System.identityHashCode(model.draft)}"
                     val content = view.findViewById<LinearLayout>(R.id.financeContent)
                     if (key != renderKey) {

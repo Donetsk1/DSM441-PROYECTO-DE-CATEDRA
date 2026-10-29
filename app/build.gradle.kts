@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.material)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-    implementation(libs.firebase.firestore)
     implementation(libs.firebase.database)
     implementation(libs.kotlinx.coroutines.play.services)
     implementation("org.jsoup:jsoup:1.17.2")

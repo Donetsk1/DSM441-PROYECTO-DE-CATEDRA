@@ -40,7 +40,7 @@ class FinanceRepository {
                         (entry["createdAt"] as? Number)?.toLong() ?: 0)
                 }
                 trySend(FinanceSnapshot(movements.sortedByDescending { it.createdAt }, budgets,
-                    (data["moneda"] as? String)?.takeIf { it in listOf("USD", "GTQ", "HNL", "NIO", "CRC") } ?: "USD"))
+                    (data["moneda"] as? String)?.takeIf { it in UserProfile.supportedCurrencies } ?: "USD"))
             }
         }
         user.addValueEventListener(listener)
