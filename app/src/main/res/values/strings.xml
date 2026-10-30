@@ -8,8 +8,6 @@
     <string name="hint_password">Contraseña</string>
     <string name="action_login">Iniciar sesión</string>
     <string name="action_go_register">¿No tienes cuenta? Regístrate</string>
-    <string name="action_forgot_password">Olvidé mi contraseña</string>
-    <string name="msg_reset_sent">Te enviamos un correo para restablecer tu contraseña.</string>
 
     <!-- Register -->
     <string name="title_register">Crear cuenta</string>

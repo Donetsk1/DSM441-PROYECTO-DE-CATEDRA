@@ -13,6 +13,8 @@ import com.example.dsmproyectodecatedra.data.UserRepository
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.launch
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,6 +23,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
+            v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+            insets
+        }
 
         if (repository.currentUser != null) {
             goToMain()
@@ -31,7 +38,6 @@ class LoginActivity : AppCompatActivity() {
         val layoutPassword = findViewById<TextInputLayout>(R.id.layoutPassword)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
         val textGoRegister = findViewById<TextView>(R.id.textGoRegister)
-        val textForgotPassword = findViewById<TextView>(R.id.textForgotPassword)
 
         buttonLogin.setOnClickListener {
             val email = layoutEmail.editText?.text?.toString()?.trim().orEmpty()
@@ -56,22 +62,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
 
-        textForgotPassword.setOnClickListener {
-            val email = layoutEmail.editText?.text?.toString()?.trim().orEmpty()
-            if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                layoutEmail.error = getString(R.string.error_invalid_email)
-                return@setOnClickListener
-            }
-            layoutEmail.error = null
-            lifecycleScope.launch {
-                try {
-                    repository.sendPasswordReset(email)
-                    Snackbar.make(buttonLogin, getString(R.string.msg_reset_sent), Snackbar.LENGTH_LONG).show()
-                } catch (e: Exception) {
-                    Snackbar.make(buttonLogin, repository.mapAuthError(e), Snackbar.LENGTH_LONG).show()
-                }
-            }
-        }
     }
 
     private fun validate(

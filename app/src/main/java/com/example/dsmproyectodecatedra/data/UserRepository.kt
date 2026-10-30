@@ -92,11 +92,6 @@ class UserRepository(
         Unit
     }
 
-    suspend fun sendPasswordReset(correo: String) = withTimeout(NETWORK_TIMEOUT_MS) {
-        auth.sendPasswordResetEmail(correo).await()
-        Unit
-    }
-
     suspend fun deleteAccount(password: String) {
         val user = auth.currentUser ?: throw IllegalStateException("No hay sesión activa")
         val email = user.email ?: throw IllegalStateException("El usuario no tiene correo asociado")
